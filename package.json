@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prettier-format": "npx prettier --write ."
+    "format": "npx prettier --write ."
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
