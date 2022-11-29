@@ -9,6 +9,7 @@
     "format": "npx prettier --write ."
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.19",
     "prettier": "2.8.0",
