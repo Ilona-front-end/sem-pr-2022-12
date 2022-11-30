@@ -5,7 +5,7 @@ export default {
     rollupOptions: {
       input: {
         login: resolve(__dirname, 'login.html'),
-        homepage: resolve(__dirname, 'index.html')
+        homepage: resolve(__dirname, 'index.html'),
       },
     },
   },
