@@ -6,6 +6,7 @@ export default {
       input: {
         login: resolve(__dirname, 'login.html'),
         homepage: resolve(__dirname, 'index.html'),
+        singleProduct: resolve(__dirname, 'single-product.html'),
       },
     },
   },

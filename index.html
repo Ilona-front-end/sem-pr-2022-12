@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An auction with a good cause" />
+    <meta name="author" content="Ilona" />
     <title>Homepage</title>
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/header.js" defer></script>
+    <script type="module" src="./js/index.js" defer></script>
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
   </head>
   <body>
@@ -296,10 +299,10 @@
         <h2 class="sr-only">Products</h2>
 
         <div
+          id="all-products-container"
           class="-mx-px grid grid-cols-2 border-l border-gray-200 sm:mx-0 md:grid-cols-3 lg:grid-cols-4"
         >
-
-          <div
+          <!-- <div
             class="group relative border-r border-b border-gray-200 p-4 sm:p-6"
           >
             <div
@@ -513,10 +516,13 @@
               </div>
               <p class="mt-4 text-base font-medium text-gray-900">$15</p>
             </div>
-          </div>
-
-          <!-- More products... -->
+          </div> -->
         </div>
+
+        <div
+          id="no-img-products-container"
+          class="-mx-px grid grid-cols-2 border-l border-gray-200 sm:mx-0 md:grid-cols-3 lg:grid-cols-4"
+        ></div>
       </div>
     </div>
   </body>
