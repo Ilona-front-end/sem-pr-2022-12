@@ -1,7 +1,9 @@
 import { API_BASE_URL, GET_PRODUCTS_URL } from './settings/api';
 
 const allProductsContainer = document.getElementById('all-products-container');
-const noImgProductsContainer = document.getElementById('no-img-products-container');
+const noImgProductsContainer = document.getElementById(
+  'no-img-products-container'
+);
 
 (async function getProducts() {
   const response = await fetch(GET_PRODUCTS_URL, {
