@@ -72,6 +72,10 @@ npm run preview
 Go to this url `http://localhost:` and you will see the website running.
 
 ---
+> **Note**
+#### This project is deployed on Netlify. Click [here](https://auctionforyou.netlify.app/index.html) to see website in your browser now.
+
+---
 
 ### Built with
 
