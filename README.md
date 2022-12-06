@@ -1,7 +1,7 @@
 <!-- Semester Project, Noroff Year 2 -->
 
 # $\textcolor{#0969da}{\text{An auction website}}$
-
+<!--
 ![GitHub forks](https://img.shields.io/github/forks/Ilona-front-end/sem-pr-2022-12?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/Ilona-front-end/sem-pr-2022-12?style=social)
 ![GitHub top language](https://img.shields.io/github/languages/top/Ilona-front-end/sem-pr-2022-12?color=yellow)
@@ -9,7 +9,7 @@
 ![last commit](https://img.shields.io/github/last-commit/Ilona-front-end/sem-pr-2022-12)
 ![commit activity](https://img.shields.io/github/commit-activity/m/Ilona-front-end/sem-pr-2022-12)
 ![repo size](https://img.shields.io/github/repo-size/Ilona-front-end/sem-pr-2022-12)
-
+-->
 ### Goal
 
 Present skills learned in the past three semesters.
