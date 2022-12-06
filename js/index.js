@@ -1,7 +1,9 @@
 import { API_BASE_URL, GET_PRODUCTS_URL } from './settings/api';
 
 const allProductsContainer = document.getElementById('all-products-container');
-const noImgProductsContainer = document.getElementById('no-img-products-container');
+const noImgProductsContainer = document.getElementById(
+  'no-img-products-container'
+);
 
 (async function getProducts() {
   const response = await fetch(GET_PRODUCTS_URL, {
@@ -38,7 +40,6 @@ const noImgProductsContainer = document.getElementById('no-img-products-containe
                                                   </a>
                                                 </h3>
                                                 <div class="mt-3 flex flex-col items-center">
-                                                  <p class="mt-1 text-sm text-gray-500">ID: ${product.id}</p>
                                                   <p class="mt-1 text-sm text-gray-500">Tags: ${product.tags}</p>
                                                   <p class="mt-1 text-sm text-gray-500">Bids: ${product._count.bids}</p>
                                                 </div>

@@ -10,14 +10,19 @@
     <script type="module" src="./js/header.js" defer></script>
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
     <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:3273198,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3273198, hjsv: 6 };
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script');
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
   </head>
   <body>
@@ -311,7 +316,9 @@
             <div
               class="overflow-hidden rounded-lg border border-gray-300 shadow-sm mt-6"
             >
-              <label for="description" class="sr-only">Description (Required)</label>
+              <label for="description" class="sr-only"
+                >Description (Required)</label
+              >
               <textarea
                 rows="10"
                 name="description"
@@ -392,23 +399,42 @@
                 type="date"
                 name="dateEnd"
                 id="dateEnd"
-                min="2022-12-01" max="2023-12-31"
+                min="2022-12-01"
+                max="2023-12-31"
                 class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
                 value="2022-12-01"
               />
             </div>
             <div>
-              <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
+              <label for="price" class="block text-sm font-medium text-gray-700"
+                >Price</label
+              >
               <div class="relative mt-1 rounded-md shadow-sm">
-                <input type="number" name="price" id="price" class="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0.00" aria-describedby="price-currency">
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                  <span class="text-gray-500 sm:text-sm" id="price-currency">NOK</span>
+                <input
+                  type="number"
+                  name="price"
+                  id="price"
+                  class="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  placeholder="0.00"
+                  aria-describedby="price-currency"
+                />
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3"
+                >
+                  <span class="text-gray-500 sm:text-sm" id="price-currency"
+                    >NOK</span
+                  >
                 </div>
               </div>
             </div>
             <div class="mt-6 mb-8">
-                <button type="submit" class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Create</button>
-              </div>
+              <button
+                type="submit"
+                class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              >
+                Create
+              </button>
+            </div>
             <!-- <div class="absolute inset-x-0 bottom-0 py-2 pl-3 pr-2">
               <div>
                 <button
