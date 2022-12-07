@@ -14,40 +14,48 @@ const biddingEnd = document.getElementById('biddingEnd');
 createNewProductForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
-  let isProductName = false;
-  let isBiddingEnd = false;
-  let approveCreateProduct = false;
+  // let isProductName = false;
+  // let isBiddingEnd = false;
+  // let approveCreateProduct = false;
 
-  if (productName.value.trim().length > 1) {
-    isProductName = true;
-  } else {
-    console.log('Product name is not valid');
-    isProductName = false;
-  }
+  // if (productName.value.trim().length > 1) {
+  //   isProductName = true;
+  // } else {
+  //   console.log('Product name is not valid');
+  //   isProductName = false;
+  // }
 
-  if (biddingEnd.value) {
-    isBiddingEnd = true;
-  } else {
-    console.log('biddingEnd is not set');
-    isBiddingEnd = false;
-  }
+  // if (biddingEnd.value) {
+  //   isBiddingEnd = true;
+  // } else {
+  //   console.log('biddingEnd is not set');
+  //   isBiddingEnd = false;
+  // }
 
-  approveCreateProduct = isProductName && isBiddingEnd;
-  console.log('approveCreateProduct', approveCreateProduct);
+  // approveCreateProduct = isProductName && isBiddingEnd;
+  // console.log('approveCreateProduct', approveCreateProduct);
 
   let images = [mediaOne.value, mediaTwo.value];
 
-  let productData = {};
+  // let productData = {};
 
-  if (approveCreateProduct) {
-    productData = {
-      'title': productName.value,
-      'description': productDescription.value,
-      'tags': [tagOne.value],
-      'media': [images],
-      'endsAt': biddingEnd.value
-    };
-  }
+  // if (approveCreateProduct) {
+  // let productData = {
+  //   'title': productName.value,
+  //   'description': productDescription.value,
+  //   'tags': [tagOne.value],
+  //   'media': [images],
+  //   'endsAt': biddingEnd.value
+  // };
+  // }
+
+  const productData = {
+    'title': productName.value,
+    'description': productDescription.value,
+    'tags': [tagOne.value],
+    'media': [images],
+    'endsAt': biddingEnd.value
+  };
 
   console.log(productData);
 
@@ -86,7 +94,7 @@ createNewProductForm.addEventListener('submit', function (event) {
       const productCreateError = await response.json();
       console.log(productCreateError);
     }
-    createNewProductForm.reset();
+    // createNewProductForm.reset();
   }
   addNewProduct();
 });
