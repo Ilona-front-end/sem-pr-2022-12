@@ -15,7 +15,9 @@ const createAccountFormUserPassword = document.getElementById(
   'createAccountFormUserPassword'
 );
 const createAccountSuccessMsg = document.getElementById('success-message');
-const createAccountFormContainerDiv = document.getElementById('createAccountFormContainerDiv');
+const createAccountFormContainerDiv = document.getElementById(
+  'createAccountFormContainerDiv'
+);
 
 createAccountForm.addEventListener('submit', function (e) {
   e.preventDefault();

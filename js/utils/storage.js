@@ -10,4 +10,15 @@ function saveToken(token) {
   saveToStorage('token', token);
 }
 
-export { saveUser, saveToken };
+const tokenKey = 'token';
+
+function getToken() {
+  const value = localStorage.getItem(tokenKey);
+  if (value) {
+    return JSON.parse(value); // convert to JS
+  } else {
+    return null;
+  }
+}
+
+export { saveUser, saveToken, getToken };

@@ -8,6 +8,7 @@
     <title>Add Product</title>
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/header.js" defer></script>
+    <script type="module" src="./js/add-product.js" defer></script>
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
     <script>
       (function (h, o, t, j, a, r) {
@@ -51,7 +52,7 @@
             <div class="hidden lg:ml-6 lg:block">
               <div class="flex space-x-4">
                 <a
-                  href="#"
+                  href="./index.html"
                   class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
                   >Dashboard</a
                 >
@@ -224,7 +225,7 @@
       <div class="lg:hidden hidden" id="navMenuDropdown">
         <div class="space-y-1 px-2 pt-2 pb-3">
           <a
-            href="#"
+            href="./index.html"
             class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
             >Dashboard</a
           >
@@ -286,8 +287,8 @@
         </div>
       </div>
     </nav>
-    <div id="logInFormContainer"></div>
     <div class="max-w-xl mx-auto my-8 px-4 sm:px-6 lg:px-8">
+      <h1 class="font-medium text-center text-xl mb-4">Add new product</h1>
       <div class="flex items-start space-x-4">
         <div class="flex-shrink-0">
           <img
@@ -297,136 +298,134 @@
           />
         </div>
         <div class="min-w-0 flex-1">
-          <div class="error-message mb-5"></div>
+          <div id="generalMessage" class="mb-5"></div>
           <form id="createNewProductForm" class="relative">
             <!-- Title -->
-            <div
-              class="overflow-hidden rounded-lg border border-gray-300 shadow-sm"
-            >
-              <label for="title" class="sr-only">Title (Required)</label>
-              <input
-                type="text"
-                name="title"
-                id="title"
-                class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
-                placeholder="Title of your product"
-              />
+            <div>
+              <label
+                for="productName"
+                class="block text-sm font-medium text-gray-700"
+                >Product Name</label
+              >
+              <div class="mt-1">
+                <input
+                  type="text"
+                  name="productName"
+                  id="productName"
+                  class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-800 focus:ring-indigo-700 sm:text-sm"
+                  value=""
+                />
+              </div>
             </div>
             <!-- Description -->
-            <div
-              class="overflow-hidden rounded-lg border border-gray-300 shadow-sm mt-6"
-            >
-              <label for="description" class="sr-only"
-                >Description (Required)</label
+            <div class="mt-5">
+              <label
+                for="productDescription"
+                class="block text-sm font-medium text-gray-700"
+                >Product Description</label
               >
-              <textarea
-                rows="10"
-                name="description"
-                id="description"
-                class="block w-full resize-none border-0 py-3 sm:text-sm"
-                placeholder="Add description..."
-              ></textarea>
+              <div class="mt-1">
+                <textarea
+                  id="productDescription"
+                  name="productDescription"
+                  rows="3"
+                  class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-800 focus:ring-indigo-700 sm:text-sm"
+                ></textarea>
+              </div>
             </div>
             <!-- Tags -->
-            <div
-              class="overflow-hidden rounded-lg border border-gray-300 shadow-sm mt-6"
-            >
-              <label for="tagOne" class="sr-only">Tag</label>
-              <input
-                type="text"
-                name="tagOne"
-                id="tagOne"
-                class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
-                placeholder="tag 1"
-              />
-            </div>
-            <div
-              class="overflow-hidden rounded-lg border border-gray-300 shadow-sm mt-2"
-            >
-              <label for="tagTwo" class="sr-only">Tag</label>
-              <input
-                type="text"
-                name="tagTwo"
-                id="tagTwo"
-                class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
-                placeholder="tag 2"
-              />
-            </div>
-            <div
-              class="overflow-hidden rounded-lg border border-gray-300 shadow-sm mt-2"
-            >
-              <label for="tagThree" class="sr-only">Tag</label>
-              <input
-                type="text"
-                name="tagThree"
-                id="tagThree"
-                class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
-                placeholder="tag 3"
-              />
-            </div>
-            <!-- Media -->
-            <div
-              class="overflow-hidden rounded-lg border border-gray-300 shadow-sm mt-6"
-            >
-              <label for="mediaOne" class="sr-only">Tag</label>
-              <input
-                type="text"
-                name="mediaOne"
-                id="mediaOne"
-                class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
-                placeholder="url to media nr. 1"
-              />
-            </div>
-            <div
-              class="overflow-hidden rounded-lg border border-gray-300 shadow-sm mt-2"
-            >
-              <label for="mediaTwo" class="sr-only">Tag</label>
-              <input
-                type="text"
-                name="mediaTwo"
-                id="mediaTwo"
-                class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
-                placeholder="url to media nr. 2"
-              />
-            </div>
-            <!-- Date -->
-            <div
-              class="overflow-hidden rounded-lg border border-gray-300 shadow-sm mt-6"
-            >
-              <label for="dateEnd" class="sr-only">Bidding ends at:</label>
-              <!-- TODO add todays date with js to input value -->
-              <input
-                type="date"
-                name="dateEnd"
-                id="dateEnd"
-                min="2022-12-01"
-                max="2023-12-31"
-                class="block w-full rounded-md border-gray-300 shadow-sm sm:text-sm"
-                value="2022-12-01"
-              />
-            </div>
-            <div>
-              <label for="price" class="block text-sm font-medium text-gray-700"
-                >Price</label
-              >
-              <div class="relative mt-1 rounded-md shadow-sm">
-                <input
-                  type="number"
-                  name="price"
-                  id="price"
-                  class="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                  placeholder="0.00"
-                  aria-describedby="price-currency"
-                />
-                <div
-                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3"
+            <div class="mt-8">
+              <div class="mb-2">
+                <label
+                  for="tagOne"
+                  class="block text-sm font-medium text-gray-700"
+                  >Product Tag</label
                 >
-                  <span class="text-gray-500 sm:text-sm" id="price-currency"
-                    >NOK</span
-                  >
+                <div class="mt-1">
+                  <input
+                    type="text"
+                    name="tagOne"
+                    id="tagOne"
+                    class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-800 focus:ring-indigo-700 sm:text-sm"
+                    value=""
+                  />
                 </div>
               </div>
             </div>
+            <!-- Media -->
+            <div class="mt-8">
+              <div class="mb-2">
+                <label
+                  for="mediaOne"
+                  class="block text-sm font-medium text-gray-700"
+                  >Product Image 1</label
+                >
+                <div class="mt-1">
+                  <input
+                    type="text"
+                    name="mediaOne"
+                    id="mediaOne"
+                    class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-800 focus:ring-indigo-700 sm:text-sm"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="mb-4">
+                <label
+                  for="mediaTwo"
+                  class="block text-sm font-medium text-gray-700"
+                  >Product Image 2</label
+                >
+                <div class="mt-1">
+                  <input
+                    type="text"
+                    name="mediaTwo"
+                    id="mediaTwo"
+                    class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-800 focus:ring-indigo-700 sm:text-sm"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Date -->
+            <div class="mt-8">
+              <label
+                for="biddingEnd"
+                class="block text-sm font-medium text-gray-700"
+                >Bidding ends at:</label
+              >
+              <div class="mt-1">
+                <input
+                  type="datetime-local"
+                  name="biddingEnd"
+                  id="biddingEnd"
+                  min="2022-12-01"
+                  max="2023-12-31"
+                  class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-800 focus:ring-indigo-700 sm:text-sm"
+                  value=""
+                />
+              </div>
+            </div>
+            <!-- Price -->
+            <div class="mt-8">
+              <label
+                for="productPrice"
+                class="block text-sm font-medium text-gray-700"
+                >Product Price</label
+              >
+              <div class="mt-1">
+                <input
+                  type="number"
+                  name="productPrice"
+                  id="productPrice"
+                  min="2022-12-01"
+                  max="2023-12-31"
+                  class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-800 focus:ring-indigo-700 sm:text-sm"
+                  value=""
+                />
+              </div>
+            </div>
+            <!-- Submit -->
             <div class="mt-6 mb-8">
               <button
                 type="submit"
@@ -435,16 +434,6 @@
                 Create
               </button>
             </div>
-            <!-- <div class="absolute inset-x-0 bottom-0 py-2 pl-3 pr-2">
-              <div>
-                <button
-                  type="submit"
-                  class="float-right inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700"
-                >
-                  Post
-                </button>
-              </div>
-            </div> -->
           </form>
         </div>
       </div>
