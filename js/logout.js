@@ -1,13 +1,19 @@
 import { getUserName, clearStorage } from './utils/storage';
 
 const logOutMobileBtns = document.querySelectorAll('.log-out-mobile-btn');
+const logInBtns = document.querySelectorAll('.logInBtn');
 
-// show or hide sign out button
 const userIsLoggedIn = getUserName();
 
 if (userIsLoggedIn) {
+  // show or hide sign out buttons
   logOutMobileBtns.forEach((button) => {
     button.classList.remove('hidden');
+  });
+
+  // show or hide log in buttons
+  logInBtns.forEach((btn) => {
+    btn.classList.add('invisible');
   });
   console.log('user is logged in');
 } else {

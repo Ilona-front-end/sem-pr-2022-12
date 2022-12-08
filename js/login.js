@@ -1,5 +1,3 @@
-// # stopped because do not have access token, nedd to add registration form
-
 import { validateEmail } from './utils/email-validation';
 import { LOGIN_USER_API } from './settings/api';
 import { saveUser, saveToken } from './utils/storage';
