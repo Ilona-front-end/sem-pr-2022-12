@@ -10,6 +10,16 @@ function saveToken(token) {
   saveToStorage('token', token);
 }
 
+// function which gets data from the local storage
+function getFromStorage(key) {
+  const value = localStorage.getItem(key);
+  if (value) {
+    return JSON.parse(value); // convert to JS
+  } else {
+    return []
+  }
+}
+
 const tokenKey = 'token';
 
 function getToken() {
@@ -21,4 +31,19 @@ function getToken() {
   }
 }
 
-export { saveUser, saveToken, getToken };
+const userKey = 'user';
+
+function getUserName() {
+  const user = getFromStorage(userKey);
+  if (userKey) {
+    return user.name
+  } else {
+    return null;
+  }
+}
+
+function clearStorage() {
+  localStorage.clear();
+}
+
+export { saveUser, saveToken, getToken, getUserName, clearStorage };

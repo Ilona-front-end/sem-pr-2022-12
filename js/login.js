@@ -86,7 +86,8 @@ logInAccountForm.addEventListener('submit', function (e) {
         // console.log(responseData.accessToken)
         saveUser(userSaveToLocalStorageProfile);
         saveToken(responseData.accessToken);
-        location.replace('/index.html');
+        // location.replace('/index.html');
+        location.reload();
       } else {
         const responseError = await response.json();
         // console.log(responseError);
