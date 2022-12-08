@@ -7,59 +7,76 @@ const productName = document.getElementById('productName');
 const productDescription = document.getElementById('productDescription');
 const tagOne = document.getElementById('tagOne');
 const mediaOne = document.getElementById('mediaOne');
-const mediaTwo = document.getElementById('mediaTwo');
 const biddingEnd = document.getElementById('biddingEnd');
 // const productPrice = document.getElementById('productPrice');
+const logInFormContainer = document.getElementById('logInFormContainer');
 
 createNewProductForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
-  // let isProductName = false;
-  // let isBiddingEnd = false;
-  // let approveCreateProduct = false;
+  generalMessage.innerHTML = '';
 
-  // if (productName.value.trim().length > 1) {
-  //   isProductName = true;
-  // } else {
-  //   console.log('Product name is not valid');
-  //   isProductName = false;
-  // }
+  let isProductName = false;
+  let isBiddingEnd = false;
+  let approveCreateProduct = false;
 
-  // if (biddingEnd.value) {
-  //   isBiddingEnd = true;
-  // } else {
-  //   console.log('biddingEnd is not set');
-  //   isBiddingEnd = false;
-  // }
+  if (productName.value.trim().length > 3) {
+    isProductName = true;
+  } else {
+    isProductName = false;
+    generalMessage.innerHTML = `<div class="rounded-md bg-red-50 p-4">
+                                  <div class="flex">
+                                    <div class="flex-shrink-0">
+                                      <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd" />
+                                      </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                      <h3 class="text-sm font-medium text-red-800">Error! Product name must be at least 4 letters</h3>
+                                    </div>
+                                  </div>
+                                </div>`;
+  }
 
-  // approveCreateProduct = isProductName && isBiddingEnd;
-  // console.log('approveCreateProduct', approveCreateProduct);
+  if (biddingEnd.value) {
+    isBiddingEnd = true;
+  } else {
+    isBiddingEnd = false;
+    generalMessage.innerHTML += `<div class="rounded-md bg-red-50 p-4">
+                                  <div class="flex">
+                                    <div class="flex-shrink-0">
+                                      <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd" />
+                                      </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                      <h3 class="text-sm font-medium text-red-800">Error! Set time for auction to end</h3>
+                                    </div>
+                                  </div>
+                                </div>`;
+  }
 
-  let images = [mediaOne.value, mediaTwo.value];
+  approveCreateProduct = isProductName && isBiddingEnd;
 
-  // let productData = {};
+  let productData = {};
 
-  // if (approveCreateProduct) {
-  // let productData = {
-  //   'title': productName.value,
-  //   'description': productDescription.value,
-  //   'tags': [tagOne.value],
-  //   'media': [images],
-  //   'endsAt': biddingEnd.value
-  // };
-  // }
-
-  const productData = {
-    'title': productName.value,
-    'description': productDescription.value,
-    'tags': [tagOne.value],
-    'media': [images],
-    'endsAt': biddingEnd.value
-  };
+  if (approveCreateProduct) {
+    productData = {
+      'title': productName.value,
+      'description': productDescription.value,
+      'tags': [tagOne.value],
+      'media': [mediaOne.value],
+      'endsAt': biddingEnd.value
+    };
+  }
 
   console.log(productData);
 
   const accessToken = getToken();
+
+  if (!accessToken) {
+    logInFormContainer.classList.remove('hidden');
+  }
 
   async function addNewProduct() {
     const response = await fetch(ADD_PRODUCT_API, {
@@ -94,7 +111,7 @@ createNewProductForm.addEventListener('submit', function (event) {
       const productCreateError = await response.json();
       console.log(productCreateError);
     }
-    // createNewProductForm.reset();
+    createNewProductForm.reset();
   }
   addNewProduct();
 });
