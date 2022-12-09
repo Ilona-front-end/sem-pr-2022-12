@@ -1,3 +1,6 @@
+import { USER_PROFILE_AVATAR_BASE } from './settings/api';
+import { getToken, getUserName } from './utils/storage';
+
 // Mobile navigation dropdown menu
 const navMenuMobileBtn = document.getElementById('navMenuMobileBtn');
 const navMenuMobileSvg = document.getElementById('navMenuMobileSvg');
@@ -52,3 +55,44 @@ goToLogInFormBtn.addEventListener('click', () => {
   createAccountFormContainer.classList.toggle('hidden');
   logInFormContainer.classList.toggle('hidden');
 });
+
+// profile-avatar
+const profileAvatar = document.querySelectorAll('.profile-avatar');
+const profileAvatarNameContainer = document.querySelectorAll('.avatarName');
+const profileAvatarEmailContainer = document.querySelectorAll('.avatarEmail');
+const accessTokenAvatar = getToken();
+const userNameAvatar = getUserName();
+const USER_PROFILE_AVATAR_API = `${USER_PROFILE_AVATAR_BASE}/${userNameAvatar}`;
+
+async function getUserProfileAvatar() {
+  const responseAvatar = await fetch(USER_PROFILE_AVATAR_API, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${accessTokenAvatar}`,
+    },
+  });
+  const jsonAvatar = await responseAvatar.json();
+  // console.log(jsonAvatar)
+  const avatar = jsonAvatar.avatar;
+  const avatarName = jsonAvatar.name;
+  const avatarEmail = jsonAvatar.email;
+
+  // upload users profile image (avatar), name, email
+  profileAvatar.forEach((item) => {
+    if (avatar) {
+      item.src = avatar;
+    } else {
+      item.src = 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80';
+    }
+  });
+
+  profileAvatarNameContainer.forEach((item) => {
+    item.innerHTML = avatarName;
+  });
+
+  profileAvatarEmailContainer.forEach((item) => {
+    item.innerHTML = avatarEmail;
+  });
+}
+getUserProfileAvatar();

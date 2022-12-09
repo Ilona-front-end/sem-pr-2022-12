@@ -8,6 +8,8 @@ const ALL_USER_PRODUCTS_BASE = `${API_BASE}/profiles`;
 // const ALL_USER_PRODUCTS_API = `${API_BASE}/profiles/${userName}?_listings=true`;
 const DELETE_PRODUCT_BASE = `${API_BASE}/listings`;
 // ${API_BASE}/listings/${id}
+const USER_PROFILE_AVATAR_BASE = `${API_BASE}/profiles`;
+// https://api.noroff.dev/api/v1/auction/profiles/${userName}/media
 
 export {
   API_BASE,
@@ -17,4 +19,5 @@ export {
   ADD_PRODUCT_API,
   ALL_USER_PRODUCTS_BASE,
   DELETE_PRODUCT_BASE,
+  USER_PROFILE_AVATAR_BASE,
 };
