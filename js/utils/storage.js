@@ -16,7 +16,7 @@ function getFromStorage(key) {
   if (value) {
     return JSON.parse(value); // convert to JS
   } else {
-    return []
+    return [];
   }
 }
 
@@ -36,7 +36,7 @@ const userKey = 'user';
 function getUserName() {
   const user = getFromStorage(userKey);
   if (userKey) {
-    return user.name
+    return user.name;
   } else {
     return null;
   }

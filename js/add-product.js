@@ -62,11 +62,11 @@ createNewProductForm.addEventListener('submit', function (event) {
 
   if (approveCreateProduct) {
     productData = {
-      'title': productName.value,
-      'description': productDescription.value,
-      'tags': [tagOne.value],
-      'media': [mediaOne.value],
-      'endsAt': biddingEnd.value
+      title: productName.value,
+      description: productDescription.value,
+      tags: [tagOne.value],
+      media: [mediaOne.value],
+      endsAt: biddingEnd.value,
     };
   }
 
@@ -74,6 +74,7 @@ createNewProductForm.addEventListener('submit', function (event) {
 
   const accessToken = getToken();
 
+  // if user is not logged in, tries to create a product -> show login form
   if (!accessToken) {
     logInFormContainer.classList.remove('hidden');
   }
@@ -83,7 +84,7 @@ createNewProductForm.addEventListener('submit', function (event) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${accessToken}`
+        Authorization: `Bearer ${accessToken}`,
       },
       body: JSON.stringify(productData),
     });
