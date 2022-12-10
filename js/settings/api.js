@@ -4,12 +4,10 @@ const GET_PRODUCTS_URL = `${API_BASE}/listings`;
 const LOGIN_USER_API = `${API_BASE}/auth/login`;
 const REGISTER_USER_API = `${API_BASE}/auth/register`;
 const ADD_PRODUCT_API = `${API_BASE}/listings`;
-const ALL_USER_PRODUCTS_BASE = `${API_BASE}/profiles`;
-// const ALL_USER_PRODUCTS_API = `${API_BASE}/profiles/${userName}?_listings=true`;
-const DELETE_PRODUCT_BASE = `${API_BASE}/listings`;
-// ${API_BASE}/listings/${id}
-const USER_PROFILE_AVATAR_BASE = `${API_BASE}/profiles`;
-// https://api.noroff.dev/api/v1/auction/profiles/${userName}/media
+const ALL_USER_PRODUCTS_BASE = `${API_BASE}/profiles`; // ${API_BASE}/profiles/${userName}?_listings=true
+const DELETE_PRODUCT_BASE = `${API_BASE}/listings`; // ${API_BASE}/listings/${id}
+const USER_PROFILE_AVATAR_BASE = `${API_BASE}/profiles`; // ${API_BASE}/profiles/${userName}/media
+const REGISTERED_USER_PROFILE_BASE = `${API_BASE}/profiles`; // ${API_BASE}/profiles/${userName}
 
 export {
   API_BASE,
@@ -20,4 +18,5 @@ export {
   ALL_USER_PRODUCTS_BASE,
   DELETE_PRODUCT_BASE,
   USER_PROFILE_AVATAR_BASE,
+  REGISTERED_USER_PROFILE_BASE,
 };
