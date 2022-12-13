@@ -558,6 +558,7 @@
           <h3 class="text-lg font-medium leading-6 text-gray-900">Profile Information</h3>
           <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal details of your account</p>
         </div>
+        <div id="generalAvatarMessage" class="mb-5 mt-5">General message</div>
         <div class="mt-5 border-t border-gray-200">
           <dl class="divide-y divide-gray-200">
             <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
@@ -603,8 +604,16 @@
                 <div id="registeredUserAvatarContainer" class="flex-grow">
                   <img class="h-10 w-10 rounded-full block" src="" alt="Registered user">
                 </div>
-                <span class="ml-4 flex-shrink-0">
-                  <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+                <span id="registeredUserAvatarBtn" class="ml-4 flex-shrink-0">
+                  <button id="updateAvatar" type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
+                </span>
+                <div id="changeAvatarInput" class="hidden flex-grow">
+                  <label for="avatar1">
+                    <input type="text" name="avatar1" id="avatar1" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-800 focus:ring-indigo-700 sm:text-sm" value="" />
+                  </label> 
+                </div>
+                <span id="changeAvatarInputBtn" class="hidden ml-4 flex-shrink-0">
+                  <button id="changeAvatar" type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Change</button>
                 </span>
               </dd>
             </div>
