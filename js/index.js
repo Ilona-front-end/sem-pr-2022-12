@@ -25,7 +25,7 @@ const noImgProductsContainer = document.getElementById(
     json.map((product) => {
       if (product.media.length > 0) {
         allProductsContainer.innerHTML += `
-                                            <div class="group relative border-r border-b border-gray-200 p-4 sm:p-6">
+                                            <div class="product-card group relative border-r border-b border-gray-200 p-4 sm:p-6">
                                               <div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75">
                                                 <img
                                                   src="${product.media[0]}"
