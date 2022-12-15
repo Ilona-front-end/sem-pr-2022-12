@@ -12,7 +12,6 @@ async function getProductsList() {
       'Content-Type': 'application/json',
     },
   });
-
   const productSearchjson = await productSearchresponse.json();
   products = productSearchjson;
 }
@@ -30,12 +29,20 @@ search.addEventListener('keyup', () => {
     searchResults.innerHTML = ' ';
 
     filteredProducts.forEach((product) => {
-      const { title, id } = product;
-      const card = document.createElement('a');
-      card.href = `single-product.html?id=${id}`;
-      card.innerHTML = `<div>
-                          <h3>${title}</h3>
+      const { title, id, media } = product;
+      const card = document.createElement('li');
+      card.innerHTML = `<div class="relative flex items-center space-x-3 px-6 py-5 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 hover:bg-gray-50">
+                          <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full" src="${media}" alt="">
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <a href="single-product.html?id=${id}" class="focus:outline-none">
+                              <span class="absolute inset-0" aria-hidden="true"></span>
+                              <p class="text-sm font-medium text-gray-900">${title}</p>
+                            </a>
+                          </div>
                         </div>`;
+
       searchResults.appendChild(card);
     });
   } else {
