@@ -69,7 +69,7 @@ async function getUserProfileAvatar() {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${accessTokenAvatar}`,
+      Authorization: `Bearer ${accessTokenAvatar}`,
     },
   });
   const jsonAvatar = await responseAvatar.json();
@@ -83,7 +83,8 @@ async function getUserProfileAvatar() {
     if (avatar) {
       item.src = avatar;
     } else {
-      item.src = 'https://icon-library.com/images/user-icon-jpg/user-icon-jpg-28.jpg';
+      item.src =
+        'https://icon-library.com/images/user-icon-jpg/user-icon-jpg-28.jpg';
     }
   });
 

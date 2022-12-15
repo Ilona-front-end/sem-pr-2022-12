@@ -1,15 +1,30 @@
-import { REGISTERED_USER_PROFILE_BASE, USER_PROFILE_AVATAR_BASE } from './settings/api';
+import {
+  REGISTERED_USER_PROFILE_BASE,
+  USER_PROFILE_AVATAR_BASE,
+} from './settings/api';
 import { getToken, getUserName } from './utils/storage';
 
-const registeredUserNameContainer = document.querySelectorAll('.registeredUserNameContainer');
-const registeredUserEmailContainer = document.getElementById('registeredUserEmailContainer');
-const registeredUserAvatarContainer = document.getElementById('registeredUserAvatarContainer');
-const registeredUserCreditContainer = document.getElementById('registeredUserCreditContainer');
-const registeredUserListedProductsNumberContainer = document.getElementById('registeredUserListedProductsNumberContainer');
+const registeredUserNameContainer = document.querySelectorAll(
+  '.registeredUserNameContainer'
+);
+const registeredUserEmailContainer = document.getElementById(
+  'registeredUserEmailContainer'
+);
+const registeredUserAvatarContainer = document.getElementById(
+  'registeredUserAvatarContainer'
+);
+const registeredUserCreditContainer = document.getElementById(
+  'registeredUserCreditContainer'
+);
+const registeredUserListedProductsNumberContainer = document.getElementById(
+  'registeredUserListedProductsNumberContainer'
+);
 
 // update avatar
 const updateAvatar = document.getElementById('updateAvatar');
-const registeredUserAvatarBtn = document.getElementById('registeredUserAvatarBtn');
+const registeredUserAvatarBtn = document.getElementById(
+  'registeredUserAvatarBtn'
+);
 const changeAvatarInput = document.getElementById('changeAvatarInput');
 const changeAvatarInputBtn = document.getElementById('changeAvatarInputBtn');
 const changeAvatar = document.getElementById('changeAvatar');
@@ -22,13 +37,16 @@ const accessToken = getToken();
 
 // get user profile details
 async function getUserProfileDetails() {
-  const profileResponse = await fetch(`${REGISTERED_USER_PROFILE_BASE}/${userName}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${accessToken}`,
-    },
-  });
+  const profileResponse = await fetch(
+    `${REGISTERED_USER_PROFILE_BASE}/${userName}`,
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+  );
   const profileJson = await profileResponse.json();
   // console.log(profileJson);
 
@@ -53,7 +71,8 @@ async function getUserProfileDetails() {
     registeredUserAvatarContainer.innerHTML = `<img class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32" src="https://icon-library.com/images/user-icon-jpg/user-icon-jpg-28.jpg" alt="User avatar is empty" />`;
   }
   registeredUserCreditContainer.innerHTML = registeredUserCredit;
-  registeredUserListedProductsNumberContainer.innerHTML = registeredUserListedProductsNumber;
+  registeredUserListedProductsNumberContainer.innerHTML =
+    registeredUserListedProductsNumber;
 }
 getUserProfileDetails();
 
@@ -76,7 +95,7 @@ changeAvatar.addEventListener('click', () => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${accessToken}`,
+        Authorization: `Bearer ${accessToken}`,
       },
       body: JSON.stringify(newAvatarUrl),
     });
@@ -124,4 +143,4 @@ changeAvatar.addEventListener('click', () => {
     }, 4000);
   }
   changeAvatarImg();
-}); 
+});

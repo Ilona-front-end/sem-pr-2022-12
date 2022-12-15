@@ -575,5 +575,5 @@ function deleteProductFunction(id) {
       window.location.reload();
     }, 2000);
   };
-  deleteProduct().then((x) => { });
+  deleteProduct().then((x) => {});
 }
