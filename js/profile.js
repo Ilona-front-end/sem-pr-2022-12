@@ -1,7 +1,7 @@
 import { REGISTERED_USER_PROFILE_BASE, USER_PROFILE_AVATAR_BASE } from './settings/api';
 import { getToken, getUserName } from './utils/storage';
 
-const registeredUserNameContainer = document.getElementById('registeredUserNameContainer');
+const registeredUserNameContainer = document.querySelectorAll('.registeredUserNameContainer');
 const registeredUserEmailContainer = document.getElementById('registeredUserEmailContainer');
 const registeredUserAvatarContainer = document.getElementById('registeredUserAvatarContainer');
 const registeredUserCreditContainer = document.getElementById('registeredUserCreditContainer');
@@ -38,10 +38,20 @@ async function getUserProfileDetails() {
   const registeredUserCredit = profileJson.credits;
   const registeredUserListedProductsNumber = profileJson._count.listings;
 
-  registeredUserNameContainer.innerHTML = registeredUserName;
+  // registeredUserNameContainer.innerHTML = registeredUserName;
+  // for (let i = 0; i < registeredUserNameContainer.length; i++) {
+  //   registeredUserNameContainer[i].innerHTML = registeredUserName;
+  // }
+  registeredUserNameContainer.forEach((adminName) => {
+    adminName.innerHTML = registeredUserName;
+  });
   registeredUserEmailContainer.innerHTML = registeredUserEmail;
-  // registeredUserAvatarContainer.innerHTML = `<img class="h-20 w-20 rounded-full lg:h-24 lg:w-24" src="${registeredUserAvatar}" alt="User avatar" />`;
-  registeredUserAvatarContainer.innerHTML = `<img class="h-40 w-40 rounded-full xl:h-56 xl:w-56" src="${registeredUserAvatar}" alt="User avatar" />`;
+
+  if (registeredUserAvatar) {
+    registeredUserAvatarContainer.innerHTML = `<img class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32" src="${registeredUserAvatar}" alt="User avatar" />`;
+  } else {
+    registeredUserAvatarContainer.innerHTML = `<img class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32" src="https://icon-library.com/images/user-icon-jpg/user-icon-jpg-28.jpg" alt="User avatar is empty" />`;
+  }
   registeredUserCreditContainer.innerHTML = registeredUserCredit;
   registeredUserListedProductsNumberContainer.innerHTML = registeredUserListedProductsNumber;
 }
@@ -49,25 +59,15 @@ getUserProfileDetails();
 
 // update user avatar
 updateAvatar.addEventListener('click', () => {
-  registeredUserAvatarContainer.classList.add('hidden');
   registeredUserAvatarBtn.classList.add('hidden');
   changeAvatarInput.classList.remove('hidden');
   changeAvatarInputBtn.classList.remove('hidden');
 });
 
 changeAvatar.addEventListener('click', () => {
-  let suitableAvatarUrl = false;
-
-  if (avatar1.value.trim().length > 5) {
-    suitableAvatarUrl = true;
-  }
-
-  let newAvatarUrl = {};
-  if (suitableAvatarUrl) {
-    newAvatarUrl = {
-      avatar: avatar1.value,
-    };
-  }
+  const newAvatarUrl = {
+    avatar: avatar1.value,
+  };
 
   async function changeAvatarImg() {
     const CHANGE_PROFILE_AVATAR_API = `${USER_PROFILE_AVATAR_BASE}/${userName}/media`;
@@ -95,7 +95,7 @@ changeAvatar.addEventListener('click', () => {
                                             <div class="ml-3">
                                               <h3 class="text-sm font-medium text-green-800">Congratulations!!</h3>
                                               <div class="mt-2 text-sm text-green-700">
-                                                <p>You have successfully updated your profile picture</p>
+                                                <p>Your profile picture will be soon updated</p>
                                               </div>
                                             </div>
                                           </div>
@@ -121,7 +121,7 @@ changeAvatar.addEventListener('click', () => {
 
     setTimeout(() => {
       window.location.reload();
-    }, 2000);
+    }, 4000);
   }
   changeAvatarImg();
 }); 

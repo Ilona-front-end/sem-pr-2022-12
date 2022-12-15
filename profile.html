@@ -552,19 +552,39 @@
       class="mx-auto max-w-7xl overflow-hidden sm:px-6 lg:px-8"
     ></div>
     <div class="bg-white">
+      <!-- Profile heading -->
+      <div>
+        <div>
+          <img class="h-32 w-full object-cover lg:h-48" src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="">
+        </div>
+        <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
+            <div id="registeredUserAvatarContainer" class="flex">
+              <img class="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32" src="https://icon-library.com/images/user-icon-jpg/user-icon-jpg-28.jpg" alt="">
+            </div>
+            <div class="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
+              <div class="mt-6 min-w-0 flex-1 sm:hidden md:block">
+                <h1 class="registeredUserNameContainer truncate text-2xl font-bold text-gray-900"></h1>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 hidden min-w-0 flex-1 sm:block md:hidden">
+            <h1 class="registeredUserNameContainer truncate text-2xl font-bold text-gray-900"></h1>
+          </div>
+        </div>
+      </div>
       <!-- Profile details -->
       <div class="mt-6 pt-6 mx-auto max-w-xl px-5 lg:px-8">
+        <div id="generalAvatarMessage" class="mb-5 mt-5"></div>
         <div>
-          <h3 class="text-lg font-medium leading-6 text-gray-900">Profile Information</h3>
           <p class="mt-1 max-w-2xl text-sm text-gray-500">Personal details of your account</p>
         </div>
-        <div id="generalAvatarMessage" class="mb-5 mt-5">General message</div>
         <div class="mt-5 border-t border-gray-200">
           <dl class="divide-y divide-gray-200">
             <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
               <dt class="text-sm font-medium text-gray-500">User name</dt>
               <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                <span id="registeredUserNameContainer" class="flex-grow">Margot Foster</span>
+                <span class="registeredUserNameContainer flex-grow"></span>
                 <span class="ml-4 flex-shrink-0">
                   <span class="rounded-md bg-white font-medium text-red-700">Admin</span>
                 </span>
@@ -573,7 +593,7 @@
             <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
               <dt class="text-sm font-medium text-gray-500">Email address</dt>
               <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                <span id="registeredUserEmailContainer" class="flex-grow">margotfoster@example.com</span>
+                <span id="registeredUserEmailContainer" class="flex-grow"></span>
                 <span class="ml-4 flex-shrink-0">
                   <span class="rounded-md bg-white font-medium text-red-700">Admin</span>
                 </span>
@@ -591,7 +611,7 @@
             <div class="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
               <dt class="text-sm font-medium text-gray-500">Products total:</dt>
               <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                <span id="registeredUserListedProductsNumberContainer" class="flex-grow">0</span>
+                <span id="registeredUserListedProductsNumberContainer" class="flex-grow"></span>
                 <span class="ml-4 flex-shrink-0">
                   <!-- <button type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button> -->
                 </span>
@@ -601,8 +621,8 @@
               <dt class="text-sm font-medium text-gray-500">Profile picture:</dt>
               <dd class="mt-1 flex text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                 <!-- <span class="registeredUserAvatar flex-grow">Missing</span> -->
-                <div id="registeredUserAvatarContainer" class="flex-grow">
-                  <img class="h-10 w-10 rounded-full block" src="" alt="Registered user">
+                <div class="flex-grow">
+                  <!-- <img class="h-10 w-10 rounded-full block" src="" alt="Registered user"> -->
                 </div>
                 <span id="registeredUserAvatarBtn" class="ml-4 flex-shrink-0">
                   <button id="updateAvatar" type="button" class="rounded-md bg-white font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Update</button>
