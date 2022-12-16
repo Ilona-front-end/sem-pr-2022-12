@@ -550,9 +550,8 @@
         </div>
       </div>
     </div>
-
     <div class="bg-white">
-      <div id="singleProductContainer" class="mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div class="mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <!-- Product -->
         <div
           class="lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16"
@@ -667,16 +666,27 @@
               </div>
             </div>
 
-            <p class="singleProductDescription mt-6 text-gray-500">
+            <p class="singleProductDescription messageToUser mt-6 text-gray-500">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel sunt voluptatibus in sit officiis. Eaque ut, expedita itaque laboriosam odio rem est consectetur nemo mollitia?
             </p>
 
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
-              <button
+              <button id="addBidToProductBtn"
                 type="button"
                 class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
               >
                 Add a bid
+              </button>
+              <div id="doBidOnProductInput" class="hidden">
+                <label for="bidInput">
+                  <input type="text" id="bidInput" class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-800 focus:ring-indigo-700 sm:text-sm py-4 px-8">
+                </label>
+              </div>
+              <button id="doBidOnProductBtn"
+                type="button"
+                class="hidden flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+              >
+                Make a bid
               </button>
               <!-- <button
                 type="button"

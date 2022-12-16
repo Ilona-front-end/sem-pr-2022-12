@@ -9,6 +9,7 @@ const DELETE_PRODUCT_BASE = `${API_BASE}/listings`; // ${API_BASE}/listings/${id
 const USER_PROFILE_AVATAR_BASE = `${API_BASE}/profiles`; // ${API_BASE}/profiles/${userName}/media
 const REGISTERED_USER_PROFILE_BASE = `${API_BASE}/profiles`; // ${API_BASE}/profiles/${userName}
 const GET_PRODUCT_BY_ID_BASE = `${API_BASE}/listings`; // ${API_BASE}/listings/${id}
+const BID_ON_PRODUCT_BASE = `${API_BASE}/listings`; // ${API_BASE}/listings/${id}/bids
 
 export {
   API_BASE,
@@ -20,5 +21,6 @@ export {
   DELETE_PRODUCT_BASE,
   USER_PROFILE_AVATAR_BASE,
   REGISTERED_USER_PROFILE_BASE,
-  GET_PRODUCT_BY_ID_BASE
+  GET_PRODUCT_BY_ID_BASE,
+  BID_ON_PRODUCT_BASE,
 };

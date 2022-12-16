@@ -27,7 +27,7 @@ logInAccountForm.addEventListener('submit', function (e) {
                                     </svg>
                                   </div>
                                   <div class="ml-3">
-                                    <h3 class="text-sm font-medium text-red-800">Required email with noroff.no/stud.noroff.no</h3>
+                                    <h3 class="text-sm font-medium text-red-800">Required email with stud.noroff.no</h3>
                                   </div>
                                 </div>
                               </div>
