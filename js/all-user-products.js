@@ -45,7 +45,7 @@ async function getUserActivity() {
     }
 
     for (let i = 0; i < numberOfUserProducts; i++) {
-      // const created = userProductsListing[i];
+      const endsAt = new Date(userProductsListing[i].endsAt).toLocaleString();
 
       allUserProductsContainer.innerHTML += `
         <div class="mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 border-b border-gray-400">
@@ -80,18 +80,13 @@ async function getUserActivity() {
                     Product information
                   </h2>
                   <p class="mt-2 text-sm text-gray-500">
-                    <time datetime="${userProductsListing[i].endsAt}">Bidding ends: ${userProductsListing[i].endsAt}</time>
+                    <time datetime="${userProductsListing[i].endsAt}">Bidding ends: ${endsAt}</time>
                   </p>
                 </div>
 
                 <div>
                   <h3 class="sr-only">Reviews</h3>
                   <div class="flex items-center">
-                    <!--
-                    Heroicon name: mini/star
-
-                    Active: "text-yellow-400", Default: "text-gray-300"
-                  -->
                     <svg
                       class="text-yellow-400 h-5 w-5 flex-shrink-0"
                       xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +101,6 @@ async function getUserActivity() {
                       />
                     </svg>
 
-                    <!-- Heroicon name: mini/star -->
                     <svg
                       class="text-yellow-400 h-5 w-5 flex-shrink-0"
                       xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +115,6 @@ async function getUserActivity() {
                       />
                     </svg>
 
-                    <!-- Heroicon name: mini/star -->
                     <svg
                       class="text-yellow-400 h-5 w-5 flex-shrink-0"
                       xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +129,6 @@ async function getUserActivity() {
                       />
                     </svg>
 
-                    <!-- Heroicon name: mini/star -->
                     <svg
                       class="text-yellow-400 h-5 w-5 flex-shrink-0"
                       xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +143,6 @@ async function getUserActivity() {
                       />
                     </svg>
 
-                    <!-- Heroicon name: mini/star -->
                     <svg
                       class="text-gray-300 h-5 w-5 flex-shrink-0"
                       xmlns="http://www.w3.org/2000/svg"
@@ -270,7 +261,6 @@ async function getUserActivity() {
                     aria-orientation="horizontal"
                     role="tablist"
                   >
-                    <!-- Selected: "border-indigo-600 text-indigo-600", Not Selected: "border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300" -->
                     <button
                       id="tab-reviews"
                       class="border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300 whitespace-nowrap border-b-2 py-6 text-sm font-medium"
@@ -283,7 +273,7 @@ async function getUserActivity() {
                   </div>
                 </div>
 
-                <!-- 'Customer Reviews' panel, show/hide based on tab state -->
+                <!-- 'Customer Reviews'  -->
                 <div
                   id="tab-panel-reviews"
                   class="-mb-10"
@@ -306,11 +296,6 @@ async function getUserActivity() {
                       <p><time datetime="2021-07-16">July 16, 2021</time></p>
 
                       <div class="mt-4 flex items-center">
-                        <!--
-                        Heroicon name: mini/star
-
-                        Active: "text-yellow-400", Default: "text-gray-300"
-                      -->
                         <svg
                           class="text-yellow-400 h-5 w-5 flex-shrink-0"
                           xmlns="http://www.w3.org/2000/svg"
@@ -325,7 +310,6 @@ async function getUserActivity() {
                           />
                         </svg>
 
-                        <!-- Heroicon name: mini/star -->
                         <svg
                           class="text-yellow-400 h-5 w-5 flex-shrink-0"
                           xmlns="http://www.w3.org/2000/svg"
@@ -340,7 +324,6 @@ async function getUserActivity() {
                           />
                         </svg>
 
-                        <!-- Heroicon name: mini/star -->
                         <svg
                           class="text-yellow-400 h-5 w-5 flex-shrink-0"
                           xmlns="http://www.w3.org/2000/svg"
@@ -355,7 +338,6 @@ async function getUserActivity() {
                           />
                         </svg>
 
-                        <!-- Heroicon name: mini/star -->
                         <svg
                           class="text-yellow-400 h-5 w-5 flex-shrink-0"
                           xmlns="http://www.w3.org/2000/svg"
@@ -370,7 +352,6 @@ async function getUserActivity() {
                           />
                         </svg>
 
-                        <!-- Heroicon name: mini/star -->
                         <svg
                           class="text-yellow-400 h-5 w-5 flex-shrink-0"
                           xmlns="http://www.w3.org/2000/svg"
@@ -408,11 +389,6 @@ async function getUserActivity() {
                       <p><time datetime="2021-07-12">July 12, 2021</time></p>
 
                       <div class="mt-4 flex items-center">
-                        <!--
-                        Heroicon name: mini/star
-
-                        Active: "text-yellow-400", Default: "text-gray-300"
-                      -->
                         <svg
                           class="text-yellow-400 h-5 w-5 flex-shrink-0"
                           xmlns="http://www.w3.org/2000/svg"
@@ -427,7 +403,6 @@ async function getUserActivity() {
                           />
                         </svg>
 
-                        <!-- Heroicon name: mini/star -->
                         <svg
                           class="text-yellow-400 h-5 w-5 flex-shrink-0"
                           xmlns="http://www.w3.org/2000/svg"
@@ -442,7 +417,6 @@ async function getUserActivity() {
                           />
                         </svg>
 
-                        <!-- Heroicon name: mini/star -->
                         <svg
                           class="text-yellow-400 h-5 w-5 flex-shrink-0"
                           xmlns="http://www.w3.org/2000/svg"
@@ -457,7 +431,6 @@ async function getUserActivity() {
                           />
                         </svg>
 
-                        <!-- Heroicon name: mini/star -->
                         <svg
                           class="text-yellow-400 h-5 w-5 flex-shrink-0"
                           xmlns="http://www.w3.org/2000/svg"
@@ -472,7 +445,6 @@ async function getUserActivity() {
                           />
                         </svg>
 
-                        <!-- Heroicon name: mini/star -->
                         <svg
                           class="text-yellow-400 h-5 w-5 flex-shrink-0"
                           xmlns="http://www.w3.org/2000/svg"
@@ -498,7 +470,6 @@ async function getUserActivity() {
                   </div>
                 </div>
 
-                <!-- 'FAQ' panel, show/hide based on tab state -->
                 <div
                   id="tab-panel-faq"
                   class="text-sm text-gray-500"
@@ -575,5 +546,5 @@ function deleteProductFunction(id) {
       window.location.reload();
     }, 2000);
   };
-  deleteProduct().then((x) => {});
+  deleteProduct().then((x) => { });
 }

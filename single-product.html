@@ -9,6 +9,11 @@
     <title>Document</title>
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/header.js" defer></script>
+    <script type="module" src="./js/single-product.js" defer></script>
+    <script type="module" src="./js/login.js" defer></script>
+    <script type="module" src="./js/create-account.js" defer></script>
+    <script type="module" src="./js/logout.js" defer></script>
+
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
     <script>
       (function (h, o, t, j, a, r) {
@@ -31,34 +36,40 @@
       <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
           <div class="flex items-center px-2 lg:px-0">
+            <!-- Logo  -->
             <div class="flex-shrink-0">
-              <img
-                class="block h-10 w-auto lg:hidden"
-                src="./img/logo-dark.jpg"
-                alt="Auction"
-              />
-              <img
-                class="hidden h-14 w-auto lg:block"
-                src="./img/logo-dark.jpg"
-                alt="Auction"
-              />
+              <a href="./index.html">
+                <img
+                  class="block h-10 w-auto lg:hidden"
+                  src="./img/logo-dark.jpg"
+                  alt="Auction"
+                />
+              </a>
+              <a href="./index.html">
+                <img
+                  class="hidden h-14 w-auto lg:block"
+                  src="./img/logo-dark.jpg"
+                  alt="Auction"
+                />
+              </a>
             </div>
+            <!-- Desktop navigation -->
             <div class="hidden lg:ml-6 lg:block">
               <div class="flex space-x-4">
                 <a
-                  href="#"
+                  href="./index.html"
                   class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
                   >Dashboard</a
                 >
                 <a
-                  href="#"
+                  href="./all-user-products.html"
                   class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                  >Team</a
+                  >My products</a
                 >
                 <a
-                  href="#"
+                  href="./add-product.html"
                   class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                  >Projects</a
+                  >Add product</a
                 >
                 <a
                   href="#"
@@ -68,6 +79,7 @@
               </div>
             </div>
           </div>
+          <!-- Search bar -->
           <div class="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
             <div class="invisible w-full max-w-lg lg:max-w-xs">
               <label for="search" class="sr-only">Search</label>
@@ -99,18 +111,18 @@
               </div>
             </div>
           </div>
+          <!-- Mobile menu button -->
           <div class="flex lg:hidden">
-            <!-- Mobile menu button -->
             <button
               type="button"
-              id="menu-btn-mobile"
+              id="navMenuMobileBtn"
               class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
               <span class="sr-only">Open main menu</span>
               <svg
-                id="menu-icon"
+                id="navMenuMobileSvg"
                 class="block h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -126,7 +138,7 @@
                 />
               </svg>
               <svg
-                id="menu-icon-exit"
+                id="navMenuMobileSvgExit"
                 class="hidden h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -143,37 +155,23 @@
               </svg>
             </button>
           </div>
+          <!-- Desktop navigation -->
           <div class="hidden lg:ml-4 lg:block">
             <div class="flex items-center">
+              <!-- Desktop navigation - log in button -->
               <button
                 type="button"
-                class="flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                class="logInBtn rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
-                <span class="sr-only">View notifications</span>
-                <!-- Heroicon name: outline/bell -->
-                <svg
-                  class="h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                  />
-                </svg>
+                Log in
               </button>
 
-              <!-- Profile dropdown -->
+              <!-- Desktop profile button and dropdown -->
               <div class="relative ml-4 flex-shrink-0">
                 <div>
                   <button
                     type="button"
-                    id="profile-dropdown-btn-lg"
+                    id="navProfileDesktopBtn"
                     class="flex rounded-full bg-gray-800 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                     id="user-menu-button"
                     aria-expanded="false"
@@ -181,15 +179,15 @@
                   >
                     <span class="sr-only">Open user menu</span>
                     <img
-                      class="h-8 w-8 rounded-full"
+                      class="h-8 w-8 rounded-full profile-avatar"
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                       alt=""
                     />
                   </button>
                 </div>
-
+                <!-- Desktop profile dropdown -->
                 <div
-                  id="profile-dropdown-info-lg"
+                  id="navProfileDesktopDropdown"
                   class="absolute hidden right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                   role="menu"
                   aria-orientation="vertical"
@@ -198,7 +196,7 @@
                 >
                   <!-- Active: "bg-gray-100", Not Active: "" -->
                   <a
-                    href="#"
+                    href="./profile.html"
                     class="block px-4 py-2 text-sm text-gray-700 hover:underline"
                     role="menuitem"
                     tabindex="-1"
@@ -215,7 +213,7 @@
                   >
                   <a
                     href="#"
-                    class="block px-4 py-2 text-sm text-gray-700 hover:underline"
+                    class="log-out-mobile-btn hidden block px-4 py-2 text-sm text-gray-700 hover:underline"
                     role="menuitem"
                     tabindex="-1"
                     id="user-menu-item-2"
@@ -229,22 +227,22 @@
       </div>
 
       <!-- Mobile menu, show/hide based on menu state. -->
-      <div class="lg:hidden hidden" id="mobile-menu">
+      <div class="lg:hidden hidden" id="navMenuDropdown">
         <div class="space-y-1 px-2 pt-2 pb-3">
           <a
-            href="#"
+            href="./index.html"
             class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
             >Dashboard</a
           >
           <a
-            href="#"
+            href="./all-user-products.html"
             class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >Team</a
+            >My Products</a
           >
           <a
-            href="#"
+            href="./add-product.html"
             class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-            >Projects</a
+            >Add product</a
           >
           <a
             href="#"
@@ -256,42 +254,29 @@
           <div class="flex items-center px-5">
             <div class="flex-shrink-0">
               <img
-                class="h-10 w-10 rounded-full"
+                class="h-10 w-10 rounded-full profile-avatar"
                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                 alt=""
               />
             </div>
             <div class="ml-3">
-              <div class="text-base font-medium text-white">Tom Cook</div>
-              <div class="text-sm font-medium text-gray-400">
+              <div class="text-base font-medium text-white avatarName">
+                Tom Cook
+              </div>
+              <div class="text-sm font-medium text-gray-400 avatarEmail">
                 tom@example.com
               </div>
             </div>
             <button
               type="button"
-              class="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              class="logInBtn ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none"
             >
-              <span class="sr-only">View notifications</span>
-              <svg
-                class="h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                />
-              </svg>
+              Log in
             </button>
           </div>
           <div class="mt-3 space-y-1 px-2">
             <a
-              href="#"
+              href="./profile.html"
               class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
               >Your Profile</a
             >
@@ -302,16 +287,272 @@
             >
             <a
               href="#"
-              class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+              class="log-out-mobile-btn hidden block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
               >Sign out</a
             >
           </div>
         </div>
       </div>
     </nav>
+    <div class="hidden" id="logInFormContainer">
+      <!-- log in form -->
+      <div
+        class="relative z-10"
+        aria-labelledby="modal-title"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div
+          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        ></div>
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+          <div
+            class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+          >
+            <div
+              class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6"
+            >
+              <div class="mb-2">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center">
+                  <a href="./index.html">
+                    <img src="./img/logo.jpg" alt="Auction" />
+                  </a>
+                </div>
+                <div class="mt-3 text-center sm:mt-5">
+                  <h3
+                    class="text-lg font-medium leading-6 text-gray-900"
+                    id="modal-title"
+                  >
+                    Log in to your account
+                  </h3>
+                </div>
+                <div class="mt-8">
+                  <div class="mt-6">
+                    <form id="logInAccountForm" class="space-y-6">
+                      <div id="login-form-error" class="hidden"></div>
+                      <div class="mt-3">
+                        <label
+                          for="loginUserEmail"
+                          class="block text-sm font-medium text-gray-700"
+                          >Email address</label
+                        >
+                        <div class="mt-1">
+                          <input
+                            id="loginUserEmail"
+                            name="loginUserEmail"
+                            type="text"
+                            autocomplete="email"
+                            class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                          />
+                        </div>
+                      </div>
+                      <div class="space-y-1">
+                        <label
+                          for="loginUserPassword"
+                          class="block text-sm font-medium text-gray-700"
+                          >Password (Minimum 8 digits)</label
+                        >
+                        <div class="mt-1">
+                          <input
+                            id="loginUserPassword"
+                            name="loginUserPassword"
+                            type="password"
+                            autocomplete="current-password"
+                            class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                          />
+                        </div>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                          <input
+                            id="remember-me"
+                            name="remember-me"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label
+                            for="remember-me"
+                            class="ml-2 block text-sm text-gray-900"
+                            >Remember me</label
+                          >
+                        </div>
+                        <div class="text-sm">
+                          <a
+                            href="#"
+                            class="font-medium text-indigo-600 hover:text-indigo-500"
+                            >Forgot your password?</a
+                          >
+                        </div>
+                      </div>
+                      <div>
+                        <button
+                          id="logInFormSubmit"
+                          type="submit"
+                          class="logInFormSubmit flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        >
+                          Sign in
+                        </button>
+                      </div>
+                    </form>
+                    <div class="inset-0 mt-6" aria-hidden="true">
+                      <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="mt-6">
+                      <button
+                        type="button"
+                        id="createAccountBtn"
+                        class="flex w-full justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      >
+                        Create an account
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hidden" id="createAccountFormContainer">
+      <!-- create account form -->
+      <div
+        id="createAccountFormContainerDiv"
+        class="relative z-10"
+        aria-labelledby="modal-title"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div
+          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+        ></div>
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+          <div
+            class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+          >
+            <div
+              class="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6"
+            >
+              <div class="mb-2">
+                <div class="mx-auto flex h-12 w-12 items-center justify-center">
+                  <a href="./index.html">
+                    <img src="./img/logo.jpg" alt="Auction" />
+                  </a>
+                </div>
+                <div class="mt-3 text-center sm:mt-5">
+                  <h3
+                    class="text-lg font-medium leading-6 text-gray-900"
+                    id="modal-title"
+                  >
+                    Create account
+                  </h3>
+                </div>
+                <div class="mt-8">
+                  <div class="mt-6">
+                    <form id="createAccountForm" class="space-y-6">
+                      <div id="create-account-form-error" class="hidden"></div>
+                      <div class="mt-3">
+                        <label
+                          for="createAccountFormUserName"
+                          class="block text-sm font-medium text-gray-700"
+                          >Your name</label
+                        >
+                        <div class="mt-1">
+                          <input
+                            id="createAccountFormUserName"
+                            name="createAccountFormUserName"
+                            type="text"
+                            autocomplete="text"
+                            class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                          />
+                        </div>
+                      </div>
+                      <div class="mt-1">
+                        <label
+                          for="createAccountFormUserEmail"
+                          class="block text-sm font-medium text-gray-700"
+                          >Email address</label
+                        >
+                        <div class="mt-1">
+                          <input
+                            id="createAccountFormUserEmail"
+                            name="createAccountFormUserEmail"
+                            type="text"
+                            autocomplete="email"
+                            class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                          />
+                        </div>
+                      </div>
+                      <div class="space-y-1">
+                        <label
+                          for="createAccountFormUserPassword"
+                          class="block text-sm font-medium text-gray-700"
+                          >Password (Minimum 8 digits)</label
+                        >
+                        <div class="mt-1">
+                          <input
+                            id="createAccountFormUserPassword"
+                            name="createAccountFormUserPassword"
+                            type="password"
+                            autocomplete="current-password"
+                            class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                          />
+                        </div>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                          <input
+                            id="remember-me"
+                            name="remember-me"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label
+                            for="remember-me"
+                            class="ml-2 block text-sm text-gray-900"
+                            >Remember me</label
+                          >
+                        </div>
+                        <div class="text-sm">
+                          <a
+                            href="#"
+                            class="font-medium text-indigo-600 hover:text-indigo-500"
+                            >Forgot your password?</a
+                          >
+                        </div>
+                      </div>
+                      <div>
+                        <button
+                          type="submit"
+                          class="flex w-full justify-center rounded-md border border-transparent bg-green-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                        >
+                          Create an account
+                        </button>
+                      </div>
+                    </form>
+                    <div class="inset-0 mt-6" aria-hidden="true">
+                      <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="mt-6">
+                      <button
+                        type="submit"
+                        id="goToLogInForm"
+                        class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      >
+                        Sign in
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="bg-white">
-      <div class="mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div id="singleProductContainer" class="mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <!-- Product -->
         <div
           class="lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16"
@@ -323,8 +564,8 @@
             >
               <img
                 src="https://tailwindui.com/img/ecommerce-images/product-page-05-product-01.jpg"
-                alt="Sample of 30 icons with friendly and fun details in outline, filled, and brand color styles."
-                class="object-cover object-center"
+                alt=""
+                class="singleProductImg object-cover object-center"
               />
             </div>
           </div>
@@ -336,7 +577,7 @@
             <div class="flex flex-col-reverse">
               <div class="mt-4">
                 <h1
-                  class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
+                  class="singleProductTitle text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
                 >
                   Application UI Icon Pack
                 </h1>
@@ -344,20 +585,14 @@
                 <h2 id="information-heading" class="sr-only">
                   Product information
                 </h2>
-                <p class="mt-2 text-sm text-gray-500">
-                  Version 1.0 (Updated
-                  <time datetime="2021-06-05">June 5, 2021</time>)
+                <p class="singleProductCreated mt-2 text-sm text-gray-500">
+
                 </p>
               </div>
 
               <div>
                 <h3 class="sr-only">Reviews</h3>
                 <div class="flex items-center">
-                  <!--
-                  Heroicon name: mini/star
-
-                  Active: "text-yellow-400", Default: "text-gray-300"
-                -->
                   <svg
                     class="text-yellow-400 h-5 w-5 flex-shrink-0"
                     xmlns="http://www.w3.org/2000/svg"
@@ -372,7 +607,6 @@
                     />
                   </svg>
 
-                  <!-- Heroicon name: mini/star -->
                   <svg
                     class="text-yellow-400 h-5 w-5 flex-shrink-0"
                     xmlns="http://www.w3.org/2000/svg"
@@ -387,7 +621,6 @@
                     />
                   </svg>
 
-                  <!-- Heroicon name: mini/star -->
                   <svg
                     class="text-yellow-400 h-5 w-5 flex-shrink-0"
                     xmlns="http://www.w3.org/2000/svg"
@@ -402,7 +635,6 @@
                     />
                   </svg>
 
-                  <!-- Heroicon name: mini/star -->
                   <svg
                     class="text-yellow-400 h-5 w-5 flex-shrink-0"
                     xmlns="http://www.w3.org/2000/svg"
@@ -417,7 +649,6 @@
                     />
                   </svg>
 
-                  <!-- Heroicon name: mini/star -->
                   <svg
                     class="text-gray-300 h-5 w-5 flex-shrink-0"
                     xmlns="http://www.w3.org/2000/svg"
@@ -436,11 +667,8 @@
               </div>
             </div>
 
-            <p class="mt-6 text-gray-500">
-              The Application UI Icon Pack comes with over 200 icons in 3
-              styles: outline, filled, and branded. This playful icon pack is
-              tailored for complex application user interfaces with a friendly
-              and legible look.
+            <p class="singleProductDescription mt-6 text-gray-500">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel sunt voluptatibus in sit officiis. Eaque ut, expedita itaque laboriosam odio rem est consectetur nemo mollitia?
             </p>
 
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
@@ -448,25 +676,30 @@
                 type="button"
                 class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
               >
-                Pay $220
+                Add a bid
               </button>
-              <button
+              <!-- <button
                 type="button"
                 class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-50 py-3 px-8 text-base font-medium text-indigo-700 hover:bg-indigo-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
               >
                 Preview
-              </button>
+              </button> -->
             </div>
 
             <div class="mt-10 border-t border-gray-200 pt-10">
-              <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
+              <h3 class="text-sm font-medium text-gray-900">Info:</h3>
               <div class="prose prose-sm mt-4 text-gray-500">
                 <ul role="list">
-                  <li>200+ SVG icons in 3 unique styles</li>
+                  <li>Registered user</li>
 
-                  <li>Compatible with Figma, Sketch, and Adobe XD</li>
+                  <li>Accepts bids up to 1000 credits</li>
 
-                  <li>Drawn on 24 x 24 pixel grid</li>
+                  <li class="singleProductTags"></li>
+
+                  <li class="singleProductEndsAt"></li>
+
+                  <li class="singleProductBids"></li>
+
                 </ul>
               </div>
             </div>
@@ -474,13 +707,7 @@
             <div class="mt-10 border-t border-gray-200 pt-10">
               <h3 class="text-sm font-medium text-gray-900">License</h3>
               <p class="mt-4 text-sm text-gray-500">
-                For personal and professional use. You cannot resell or
-                redistribute these icons in their original or modified state.
-                <a
-                  href="#"
-                  class="font-medium text-indigo-600 hover:text-indigo-500"
-                  >Read full license</a
-                >
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum suscipit a vero nihil impedit sequi aliquam sint numquam quia rem hic repellendus, labore quas. Labore?
               </p>
             </div>
 

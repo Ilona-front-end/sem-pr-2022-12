@@ -30,15 +30,17 @@ const noImgProductsContainer = document.getElementById(
         allProductsContainer.innerHTML += `
                                             <div class="product-card group relative border-r border-b border-gray-200 p-4 sm:p-6">
                                               <div class="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75">
-                                                <img
-                                                  src="${product.media[0]}"
-                                                  alt="product"
-                                                  class="h-full w-full object-cover object-center"/>
+                                                <a href="single-product.html?id=${product.id}">
+                                                  <img
+                                                    src="${product.media[0]}"
+                                                    alt="product"
+                                                    class="h-full w-full object-cover object-center"/>
+                                                </a>
                                               </div>
                                               <div class="pt-10 pb-4 text-center">
                                                 <h3 class="text-sm font-medium text-gray-900">
-                                                  <a href="#">
-                                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                                  <a href="single-product.html?id=${product.id}">
+                                                    <span aria-hidden="true" class="absolute"></span>
                                                     ${product.title}
                                                   </a>
                                                 </h3>
@@ -61,7 +63,7 @@ const noImgProductsContainer = document.getElementById(
                                               </div>
                                               <div class="pt-10 pb-4 text-center">
                                                 <h3 class="text-sm font-medium text-gray-900">
-                                                  <a href="#">
+                                                  <a href="single-product.html?id=${product.id}">
                                                     <span aria-hidden="true" class="absolute inset-0"></span>
                                                     ${product.title}
                                                   </a>

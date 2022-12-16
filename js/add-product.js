@@ -75,6 +75,12 @@ createNewProductForm.addEventListener('submit', function (event) {
                                 </div>`;
   }
 
+  if (mediaOne.value) {
+    mediaOne.value = mediaOne.value;
+  } else {
+    mediaOne.value = 'https://cdn.wallpapersafari.com/82/2/LJPGjI.jpg';
+  }
+
   approveCreateProduct = isProductName && isBiddingEnd && isProductDescriptionLength;
 
   let productData = {};
@@ -89,7 +95,7 @@ createNewProductForm.addEventListener('submit', function (event) {
     };
   }
 
-  console.log(productData);
+  console.log('productData', productData);
 
   const accessToken = getToken();
 
@@ -122,7 +128,7 @@ createNewProductForm.addEventListener('submit', function (event) {
                                       <div class="ml-3">
                                         <h3 class="text-sm font-medium text-green-800">Congratulations!!</h3>
                                         <div class="mt-2 text-sm text-green-700">
-                                          <p>You have successfully created your new product. You can find all of your listed products in <a href="#">My Products</a></p>
+                                          <p>You have successfully created your new product. You can find all of your listed products in <a href="all-user-products.html" class="underline">My Products</a></p>
                                         </div>
                                       </div>
                                     </div>
