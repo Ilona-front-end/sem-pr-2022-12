@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { GET_PRODUCTS_URL } from './settings/api';
 
 const allProductsContainer = document.getElementById('all-products-container');
@@ -23,6 +24,8 @@ const noImgProductsContainer = document.getElementById(
     allProductsContainer.innerHTML = 'No products to show';
   } else {
     json.map((product) => {
+      const endsAt = moment(product.endsAt).format('lll');
+
       if (product.media.length > 0) {
         allProductsContainer.innerHTML += `
                                             <div class="product-card group relative border-r border-b border-gray-200 p-4 sm:p-6">
@@ -43,7 +46,7 @@ const noImgProductsContainer = document.getElementById(
                                                   <p class="mt-1 text-sm text-gray-500">Tags: ${product.tags}</p>
                                                   <p class="mt-1 text-sm text-gray-500">Bids: ${product._count.bids}</p>
                                                 </div>
-                                                <p class="mt-4 text-base font-medium text-gray-900">Ends: ${product.endsAt}</p>
+                                                <p class="mt-4 text-sm font-medium text-gray-500">Ends: ${endsAt}</p>
                                               </div>
                                             </div>
                                           `;
@@ -67,7 +70,7 @@ const noImgProductsContainer = document.getElementById(
                                                   <p class="mt-1 text-sm text-gray-500">Tags: ${product.tags}</p>
                                                   <p class="mt-1 text-sm text-gray-500">Bids: ${product._count.bids}</p>
                                                 </div>
-                                                <p class="mt-4 text-base font-medium text-gray-900">Ends: ${product.endsAt}</p>
+                                                <p class="mt-4 text-sm font-medium text-gray-500">Ends: ${endsAt}</p>
                                               </div>
                                             </div>
                                             `;
