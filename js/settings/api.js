@@ -10,6 +10,7 @@ const USER_PROFILE_AVATAR_BASE = `${API_BASE}/profiles`; // ${API_BASE}/profiles
 const REGISTERED_USER_PROFILE_BASE = `${API_BASE}/profiles`; // ${API_BASE}/profiles/${userName}
 const GET_PRODUCT_BY_ID_BASE = `${API_BASE}/listings`; // ${API_BASE}/listings/${id}
 const BID_ON_PRODUCT_BASE = `${API_BASE}/listings`; // ${API_BASE}/listings/${id}/bids
+const BID_HISTORY_BASE = `${API_BASE}/listings`; // ${API_BASE}/listings/${productID}?_seller=true&_bids=true
 
 export {
   API_BASE,
@@ -23,4 +24,5 @@ export {
   REGISTERED_USER_PROFILE_BASE,
   GET_PRODUCT_BY_ID_BASE,
   BID_ON_PRODUCT_BASE,
+  BID_HISTORY_BASE,
 };
