@@ -717,28 +717,6 @@
             <div class="mt-10 border-t border-gray-200 pt-10">
               <h3 class="mb-4 text-sm font-medium text-gray-900">Bidding history</h3>
               <ul role="list" id="biddingHistory" class="-mb-8">
-                <!-- <li>
-                  <div class="relative pb-8">
-                    <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
-                    <div class="relative flex space-x-3">
-                      <div>
-                        <span class="h-8 w-8 rounded-full bg-gray-400 flex items-center justify-center ring-8 ring-white">
-                          <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z" />
-                          </svg>
-                        </span>
-                      </div>
-                      <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-                        <div>
-                          <p class="text-sm text-gray-500">Applied to <a href="#" class="font-medium text-gray-900">Front End Developer</a></p>
-                        </div>
-                        <div class="whitespace-nowrap text-right text-sm text-gray-500">
-                          <time datetime="2020-09-20">Sep 20</time>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li> -->
               </ul>
             </div>
 
@@ -817,7 +795,6 @@
                   aria-orientation="horizontal"
                   role="tablist"
                 >
-                  <!-- Selected: "border-indigo-600 text-indigo-600", Not Selected: "border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300" -->
                   <button
                     id="tab-reviews"
                     class="border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300 whitespace-nowrap border-b-2 py-6 text-sm font-medium"
@@ -827,28 +804,10 @@
                   >
                     Customer Reviews
                   </button>
-                  <button
-                    id="tab-faq"
-                    class="border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300 whitespace-nowrap border-b-2 py-6 text-sm font-medium"
-                    aria-controls="tab-panel-faq"
-                    role="tab"
-                    type="button"
-                  >
-                    FAQ
-                  </button>
-                  <button
-                    id="tab-license"
-                    class="border-transparent text-gray-700 hover:text-gray-800 hover:border-gray-300 whitespace-nowrap border-b-2 py-6 text-sm font-medium"
-                    aria-controls="tab-panel-license"
-                    role="tab"
-                    type="button"
-                  >
-                    License
-                  </button>
+                  <!-- add buttons here -->
                 </div>
               </div>
 
-              <!-- 'Customer Reviews' panel, show/hide based on tab state -->
               <div
                 id="tab-panel-reviews"
                 class="-mb-10"
@@ -867,15 +826,10 @@
                     />
                   </div>
                   <div class="py-10">
-                    <h3 class="font-medium text-gray-900">Emily Selman</h3>
-                    <p><time datetime="2021-07-16">July 16, 2021</time></p>
+                    <h3 class="font-medium text-gray-900">Anniken Messi</h3>
+                    <p><time datetime="2022-12-16">Des 16, 2022</time></p>
 
                     <div class="mt-4 flex items-center">
-                      <!--
-                      Heroicon name: mini/star
-
-                      Active: "text-yellow-400", Default: "text-gray-300"
-                    -->
                       <svg
                         class="text-yellow-400 h-5 w-5 flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
@@ -890,7 +844,6 @@
                         />
                       </svg>
 
-                      <!-- Heroicon name: mini/star -->
                       <svg
                         class="text-yellow-400 h-5 w-5 flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
@@ -905,7 +858,6 @@
                         />
                       </svg>
 
-                      <!-- Heroicon name: mini/star -->
                       <svg
                         class="text-yellow-400 h-5 w-5 flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
@@ -920,7 +872,6 @@
                         />
                       </svg>
 
-                      <!-- Heroicon name: mini/star -->
                       <svg
                         class="text-yellow-400 h-5 w-5 flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
@@ -935,28 +886,12 @@
                         />
                       </svg>
 
-                      <!-- Heroicon name: mini/star -->
-                      <svg
-                        class="text-yellow-400 h-5 w-5 flex-shrink-0"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
                     </div>
-                    <p class="sr-only">5 out of 5 stars</p>
+                    <p class="sr-only">4 out of 5 stars</p>
 
                     <div class="prose prose-sm mt-4 max-w-none text-gray-500">
                       <p>
-                        This icon pack is just what I need for my latest
-                        project. There's an icon for just about anything I could
-                        ever need. Love the playful look!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta totam qui perspiciatis corrupti autem error recusandae libero, perferendis alias nulla atque voluptatem in repellat?
                       </p>
                     </div>
                   </div>
@@ -971,15 +906,10 @@
                     />
                   </div>
                   <div class="py-10 border-t border-gray-200">
-                    <h3 class="font-medium text-gray-900">Hector Gibbons</h3>
-                    <p><time datetime="2021-07-12">July 12, 2021</time></p>
+                    <h3 class="font-medium text-gray-900">Bjørn Hansen</h3>
+                    <p><time datetime="2022-12-12">Des 12, 2022</time></p>
 
                     <div class="mt-4 flex items-center">
-                      <!--
-                      Heroicon name: mini/star
-
-                      Active: "text-yellow-400", Default: "text-gray-300"
-                    -->
                       <svg
                         class="text-yellow-400 h-5 w-5 flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
@@ -994,7 +924,6 @@
                         />
                       </svg>
 
-                      <!-- Heroicon name: mini/star -->
                       <svg
                         class="text-yellow-400 h-5 w-5 flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1009,7 +938,6 @@
                         />
                       </svg>
 
-                      <!-- Heroicon name: mini/star -->
                       <svg
                         class="text-yellow-400 h-5 w-5 flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1024,7 +952,6 @@
                         />
                       </svg>
 
-                      <!-- Heroicon name: mini/star -->
                       <svg
                         class="text-yellow-400 h-5 w-5 flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1039,7 +966,6 @@
                         />
                       </svg>
 
-                      <!-- Heroicon name: mini/star -->
                       <svg
                         class="text-yellow-400 h-5 w-5 flex-shrink-0"
                         xmlns="http://www.w3.org/2000/svg"
@@ -1058,11 +984,7 @@
 
                     <div class="prose prose-sm mt-4 max-w-none text-gray-500">
                       <p>
-                        Blown away by how polished this icon pack is. Everything
-                        looks so consistent and each SVG is optimized out of the
-                        box so I can use it directly with confidence. It would
-                        take me several hours to create a single icon this good,
-                        so it's a steal at this price.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, voluptate. Inventore, quam! Minima qui expedita animi eius eum officia quaerat non, perferendis sit repellat excepturi distinctio soluta ipsam illo quis. Quasi eveniet sint soluta corrupti.
                       </p>
                     </div>
                   </div>
@@ -1071,7 +993,7 @@
                 <!-- More reviews... -->
               </div>
 
-              <!-- 'FAQ' panel, show/hide based on tab state -->
+              <!-- 'FAQ' panel -->
               <div
                 id="tab-panel-faq"
                 class="text-sm text-gray-500"
@@ -1083,25 +1005,20 @@
 
                 <dl>
                   <dt class="mt-10 font-medium text-gray-900">
-                    What format are these icons?
+                    How much should you bid?
                   </dt>
                   <dd class="prose prose-sm mt-2 max-w-none text-gray-500">
                     <p>
-                      The icons are in SVG (Scalable Vector Graphic) format.
-                      They can be imported into your design tool of choice and
-                      used directly in code.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis accusamus enim eum deserunt?
                     </p>
                   </dd>
 
                   <dt class="mt-10 font-medium text-gray-900">
-                    Can I use the icons at different sizes?
+                    How do I know who get this product?
                   </dt>
                   <dd class="prose prose-sm mt-2 max-w-none text-gray-500">
                     <p>
-                      Yes. The icons are drawn on a 24 x 24 pixel grid, but the
-                      icons can be scaled to different sizes as needed. We
-                      don&#039;t recommend going smaller than 20 x 20 or larger
-                      than 64 x 64 to retain legibility and visual balance.
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error est repudiandae quo neque explicabo nisi facilis sapiente corrupti tenetur obcaecati.
                     </p>
                   </dd>
 
@@ -1109,7 +1026,7 @@
                 </dl>
               </div>
 
-              <!-- 'License' panel, show/hide based on tab state -->
+              <!-- 'License' panel -->
               <div
                 id="tab-panel-license"
                 class="pt-10"
@@ -1117,33 +1034,30 @@
                 role="tabpanel"
                 tabindex="0"
               >
-                <h3 class="sr-only">License</h3>
+                <h3 class="sr-only">General</h3>
 
                 <div class="prose prose-sm max-w-none text-gray-500">
                   <h4>Overview</h4>
 
                   <p>
-                    For personal and professional use. You cannot resell or
-                    redistribute these icons in their original or modified
-                    state.
+                    Aliquid eligendi nisi nemo error necessitatibus, sed porro consectetur rerum?
                   </p>
 
                   <ul role="list">
                     <li>
-                      You're allowed to use the icons in unlimited projects.
+                      Resell? 
                     </li>
-                    <li>Attribution is not required to use the icons.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
                   </ul>
 
-                  <h4>What you can do with it</h4>
+                  <h4>Lorem ipsum dolor sit amet consectetur.</h4>
 
                   <ul role="list">
                     <li>
-                      Use them freely in your personal and professional work.
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. At!
                     </li>
                     <li>
-                      Make them your own. Change the colors to suit your project
-                      or brand.
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel maxime veritatis officiis quibusdam?
                     </li>
                   </ul>
 
@@ -1151,13 +1065,10 @@
 
                   <ul role="list">
                     <li>
-                      Don't be greedy. Selling or distributing these icons in
-                      their original or modified state is prohibited.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates sequi omnis amet praesentium reprehenderit, voluptate sit?
                     </li>
                     <li>
-                      Don't be evil. These icons cannot be used on websites or
-                      applications that promote illegal or immoral beliefs or
-                      activities.
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto voluptatibus ullam, similique ratione impedit laudantium explicabo amet qui vel optio?
                     </li>
                   </ul>
                 </div>

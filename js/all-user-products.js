@@ -81,7 +81,6 @@ async function getUserActivity() {
                                                       <p class="mt-2 text-sm text-gray-500">
                                                         <time datetime="${userProductsListing[i].endsAt}">Bidding ends: ${endsAt}</time>
                                                       </p>
-                                                      <p>ID: ${userProductsListing[i].id}</p>
                                                     </div>
 
                                                     <div>
@@ -292,8 +291,8 @@ async function getUserActivity() {
                                                           />
                                                         </div>
                                                         <div class="py-10">
-                                                          <h3 class="font-medium text-gray-900">Emily Selman</h3>
-                                                          <p><time datetime="2021-07-16">July 16, 2021</time></p>
+                                                          <h3 class="font-medium text-gray-900">Jørgen Halden</h3>
+                                                          <p><time datetime="2022-12-18">Des 18, 2022</time></p>
 
                                                           <div class="mt-4 flex items-center">
                                                             <svg
@@ -385,8 +384,8 @@ async function getUserActivity() {
                                                           />
                                                         </div>
                                                         <div class="py-10 border-t border-gray-200">
-                                                          <h3 class="font-medium text-gray-900">Hector Gibbons</h3>
-                                                          <p><time datetime="2021-07-12">July 12, 2021</time></p>
+                                                          <h3 class="font-medium text-gray-900">Kjell Inge</h3>
+                                                          <p><time datetime="20212-12-19">Des 19, 2022</time></p>
 
                                                           <div class="mt-4 flex items-center">
                                                             <svg
