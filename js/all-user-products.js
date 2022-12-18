@@ -21,12 +21,9 @@ async function getUserActivity() {
 
   if (singleUserProductsResponse.status === 200) {
     const singleUserProducts = await singleUserProductsResponse.json();
-    // console.log('singleUserProducts', singleUserProducts);
     allUserProductsContainer.innerHTML = ' ';
     const userProductsListing = singleUserProducts.listings;
-    // console.log('userProductsListing', userProductsListing);
     const numberOfUserProducts = userProductsListing.length;
-    // console.log('numberOfUserProducts', numberOfUserProducts);
     if (numberOfUserProducts === 0) {
       allUserProductsContainer.innerHTML = `<div class="border-l-4 border-yellow-400 bg-yellow-50 p-4">
                                               <div class="flex">
@@ -506,7 +503,6 @@ getUserActivity().then(() => {
   deleteBtn.forEach((btn) => {
     btn.addEventListener('click', function () {
       const productId = this.dataset.id;
-      console.log(productId);
       deleteProductFunction(productId);
     });
   });
@@ -520,8 +516,6 @@ function deleteProductFunction(id) {
         Authorization: `Bearer ${accessToken}`,
       },
     });
-    // console.log(response.status);
-    // console.log('Product deleted');
 
     const deleteSuccessMsg = document.getElementById('delete-success-message');
 

@@ -45,7 +45,7 @@ const getProductById = async () => {
   singleProductCreated.innerHTML = `Created ${daysSinceCreated} days ago`;
   singleProductDescription.innerHTML = `Description: ${description}`;
   singleProductTags.innerHTML = `Tags: ${tags}`;
-  singleProductEndsAt.innerHTML = `Ends at: ${endsAtDate}`;
+  singleProductEndsAt.innerHTML = `<span class="text-red-700">Ends at: ${endsAtDate}</span>`;
   singleProductBids.innerHTML = `Bids made: ${bids} times`;
 };
 getProductById();

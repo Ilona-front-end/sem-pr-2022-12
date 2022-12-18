@@ -1,3 +1,4 @@
+import '../css/style.css';
 import { USER_PROFILE_AVATAR_BASE } from './settings/api';
 import { getToken, getUserName } from './utils/storage';
 
@@ -73,7 +74,6 @@ async function getUserProfileAvatar() {
     },
   });
   const jsonAvatar = await responseAvatar.json();
-  // console.log(jsonAvatar)
   const avatar = jsonAvatar.avatar;
   const avatarName = jsonAvatar.name;
   const avatarEmail = jsonAvatar.email;

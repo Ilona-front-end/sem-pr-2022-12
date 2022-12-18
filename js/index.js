@@ -16,8 +16,6 @@ const noImgProductsContainer = document.getElementById(
 
   const json = await response.json();
 
-  console.log(json);
-
   allProductsContainer.innerHTML = '';
 
   if (json.length === 0) {

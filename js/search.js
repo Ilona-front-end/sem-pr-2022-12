@@ -1,6 +1,5 @@
 import { GET_PRODUCTS_URL } from './settings/api';
 
-// const productCard = document.querySelector('.product-card');
 const searchResults = document.querySelector('.searchResults');
 const search = document.getElementById('search');
 

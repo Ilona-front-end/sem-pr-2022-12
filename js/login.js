@@ -41,7 +41,6 @@ logInAccountForm.addEventListener('submit', function (e) {
     loginFormError.innerHTML += `<div class="rounded-md bg-red-50 p-4">
                                 <div class="flex">
                                   <div class="flex-shrink-0">
-                                    <!-- Heroicon name: mini/x-circle -->
                                     <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd" />
                                     </svg>
@@ -70,8 +69,6 @@ logInAccountForm.addEventListener('submit', function (e) {
         },
         body: JSON.stringify(user),
       });
-      // console.log(response)
-      // const data = await response.json();
 
       if (response.status === 200) {
         const responseData = await response.json();
@@ -81,17 +78,13 @@ logInAccountForm.addEventListener('submit', function (e) {
           email: responseData.email,
         };
 
-        // console.log(responseData.accessToken)
         saveUser(userSaveToLocalStorageProfile);
         saveToken(responseData.accessToken);
-        // location.replace('/index.html');
         location.reload();
       } else {
         const responseError = await response.json();
-        console.log('responseError', responseError);
 
         const responseErrorMessage = responseError.errors[0].message;
-        // const responseErrorStatus = responseError.status;
         throw new Error(responseErrorMessage);
       }
     })().catch((message) => {

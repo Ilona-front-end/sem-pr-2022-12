@@ -56,10 +56,6 @@ async function getUserProfileDetails() {
   const registeredUserCredit = profileJson.credits;
   const registeredUserListedProductsNumber = profileJson._count.listings;
 
-  // registeredUserNameContainer.innerHTML = registeredUserName;
-  // for (let i = 0; i < registeredUserNameContainer.length; i++) {
-  //   registeredUserNameContainer[i].innerHTML = registeredUserName;
-  // }
   registeredUserNameContainer.forEach((adminName) => {
     adminName.innerHTML = registeredUserName;
   });
@@ -102,8 +98,6 @@ changeAvatar.addEventListener('click', () => {
     console.log(changeAvatarResponse);
 
     if (changeAvatarResponse.status === 200) {
-      // const changeAvatarJson = await changeAvatarResponse.json();
-      console.log('avatar changed');
       generalAvatarMessage.innerHTML = `<div class="rounded-md bg-green-50 p-4">
                                           <div class="flex">
                                             <div class="flex-shrink-0">
@@ -121,8 +115,6 @@ changeAvatar.addEventListener('click', () => {
                                         </div>`;
     } else {
       const avatarChangeError = await changeAvatarResponse.json();
-      console.log(avatarChangeError);
-      console.log('avatar not changed');
 
       generalAvatarMessage.innerHTML = `<div class="rounded-md bg-red-50 p-4">
                                           <div class="flex">
